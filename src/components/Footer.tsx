@@ -28,7 +28,7 @@ const Footer = () => {
               <span>YouTube</span>
             </a>
             <a 
-              href="https://linkedin.com/in/yourprofile" 
+              href="https://linkedin.com/company/nexamine-ai" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center space-x-1 hover:text-white transition-colors"
