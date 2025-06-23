@@ -19,10 +19,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">N</span>
-              </div>
+            <Link to="/" className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
+                alt="Nexamine Logo" 
+                className="w-8 h-8"
+              />
               <span className="text-2xl font-bold text-gray-900">Nexamine</span>
             </Link>
           </div>

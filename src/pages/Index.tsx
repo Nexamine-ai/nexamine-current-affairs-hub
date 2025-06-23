@@ -11,9 +11,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
             <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <span className="text-blue-600 font-bold text-2xl">N</span>
-              </div>
+              <img 
+                src="/lovable-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
+                alt="Nexamine Logo" 
+                className="w-12 h-12"
+              />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Nexamine
@@ -22,8 +24,8 @@ const Index = () => {
               Where Aspirants Evolve
             </p>
             <p className="text-lg md:text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-              Transform your UPSC preparation with AI-powered tools, curated content, 
-              and comprehensive mock exams designed to elevate your journey.
+              Transform your UPSC preparation with smart tools, curated content, 
+              and comprehensive mock exams. Connect with Nexamine to reach your goals easier.
             </p>
           </div>
           
@@ -45,7 +47,7 @@ const Index = () => {
               Comprehensive UPSC Preparation
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Everything you need to succeed in your UPSC journey, powered by advanced AI technology
+              Everything you need to succeed in your UPSC journey, enhanced with smart technology
             </p>
           </div>
 
@@ -56,7 +58,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Current Affairs</h3>
               <p className="text-gray-600 leading-relaxed">
-                Daily curated content from The Hindu, PIB, and Yojana with AI-enhanced insights 
+                Daily curated content from The Hindu, PIB, and Yojana with enhanced insights 
                 and editorial analysis tagged by GS papers.
               </p>
             </div>
@@ -76,10 +78,10 @@ const Index = () => {
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                 <Search className="text-purple-600" size={24} />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">AI-Powered Tools</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Smart Tools</h3>
               <p className="text-gray-600 leading-relaxed">
                 Personalized study plans, intelligent content curation, and adaptive 
-                learning powered by Nexensia AI technology.
+                learning powered by Nexamine technology.
               </p>
             </div>
           </div>

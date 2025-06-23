@@ -21,12 +21,12 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Mission</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Nexamine helps UPSC aspirants succeed through AI-powered tools, curated content, and mock exams. 
+              Nexamine helps UPSC aspirants succeed through smart tools, curated content, and mock exams. 
               We believe that every aspirant deserves access to high-quality preparation materials and 
               personalized guidance to achieve their dreams of serving the nation.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our platform combines the power of artificial intelligence with expertly curated educational 
+              Our platform combines innovative technology with expertly curated educational 
               content to create a comprehensive learning ecosystem that adapts to each individual's needs 
               and learning style.
             </p>
@@ -60,7 +60,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Innovation</h3>
               <p className="text-gray-600">
-                Leveraging cutting-edge AI technology to revolutionize exam preparation.
+                Leveraging cutting-edge technology to revolutionize exam preparation.
               </p>
             </div>
 
@@ -81,16 +81,16 @@ const About = () => {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Powered by Nexensia AI</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Powered by Innovation</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Our advanced AI technology analyzes vast amounts of educational content, current affairs, 
-              and exam patterns to provide personalized learning experiences. Nexensia AI continuously 
+              Our advanced technology analyzes vast amounts of educational content, current affairs, 
+              and exam patterns to provide personalized learning experiences. Nexamine continuously 
               adapts to your learning progress, identifies knowledge gaps, and suggests targeted 
               improvements to optimize your preparation strategy.
             </p>
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl">
               <p className="text-gray-700 italic text-lg">
-                "Where artificial intelligence meets human aspiration, creating pathways to success 
+                "Where innovative technology meets human aspiration, creating pathways to success 
                 in the most challenging examinations."
               </p>
             </div>

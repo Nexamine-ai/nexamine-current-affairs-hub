@@ -14,7 +14,7 @@ const CurrentAffairs = () => {
       gsRelevance: ["GS3"],
       tags: ["Digital India", "Technology", "Economic Development"],
       summary: "Recent developments in India's digital infrastructure showing significant progress in connectivity and digital governance.",
-      aiInsight: "This topic is crucial for GS3 (Technology & Economic Development). Focus on government initiatives, impact on rural development, and challenges in implementation.",
+      nexamineInsight: "This topic is crucial for GS3 (Technology & Economic Development). Focus on government initiatives, impact on rural development, and challenges in implementation.",
       readTime: "3 min read"
     },
     {
@@ -26,7 +26,7 @@ const CurrentAffairs = () => {
       gsRelevance: ["GS3", "GS1"],
       tags: ["Climate Change", "Environment", "Policy"],
       summary: "Government announces new climate adaptation strategies with focus on vulnerable communities and sustainable development.",
-      aiInsight: "Relevant for both GS1 (Geography) and GS3 (Environment). Study the intersection of climate policy and socio-economic development.",
+      nexamineInsight: "Relevant for both GS1 (Geography) and GS3 (Environment). Study the intersection of climate policy and socio-economic development.",
       readTime: "4 min read"
     },
     {
@@ -38,7 +38,7 @@ const CurrentAffairs = () => {
       gsRelevance: ["GS2"],
       tags: ["Healthcare", "Rural Development", "Governance"],
       summary: "Analysis of recent healthcare reforms and their impact on improving medical access in rural areas.",
-      aiInsight: "Key topic for GS2 (Governance & Social Justice). Focus on policy implementation, challenges, and outcomes.",
+      nexamineInsight: "Key topic for GS2 (Governance & Social Justice). Focus on policy implementation, challenges, and outcomes.",
       readTime: "5 min read"
     }
   ];
@@ -54,7 +54,7 @@ const CurrentAffairs = () => {
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Daily Current Affairs</h1>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-              Content curated from The Hindu, PIB, Yojana, tagged by GS paper and enhanced with AI insights and editorials
+              Content curated from The Hindu, PIB, Yojana, tagged by GS paper and enhanced with editorial analysis
             </p>
           </div>
           
@@ -140,15 +140,17 @@ const CurrentAffairs = () => {
                     {article.summary}
                   </p>
 
-                  {/* AI Insight */}
+                  {/* Nexamine Insight */}
                   <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg mb-6 border-l-4 border-purple-500">
                     <div className="flex items-start space-x-2">
-                      <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-purple-600 font-bold text-xs">AI</span>
-                      </div>
+                      <img 
+                        src="/lovable-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
+                        alt="Nexamine" 
+                        className="w-6 h-6 flex-shrink-0 mt-0.5"
+                      />
                       <div>
-                        <h4 className="font-semibold text-purple-900 mb-1">Nexensia AI Insight:</h4>
-                        <p className="text-purple-800 text-sm leading-relaxed">{article.aiInsight}</p>
+                        <h4 className="font-semibold text-purple-900 mb-1">Nexamine Insight:</h4>
+                        <p className="text-purple-800 text-sm leading-relaxed">{article.nexamineInsight}</p>
                       </div>
                     </div>
                   </div>
@@ -198,7 +200,7 @@ const CurrentAffairs = () => {
           <div className="flex items-center justify-center space-x-2 text-blue-800">
             <Calendar size={20} />
             <p className="font-medium">
-              Current Affairs are updated daily at 8:00 AM IST with fresh content and AI analysis
+              Current Affairs are updated daily at 8:00 AM IST with fresh content and analysis
             </p>
           </div>
         </div>
