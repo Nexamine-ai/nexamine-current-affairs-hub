@@ -8,14 +8,14 @@ const Footer = () => {
         <div className="text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <img 
-              src="/lovable-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
+              src="/Nexamine-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
               alt="Nexamine Logo" 
               className="w-6 h-6"
             />
             <span className="text-xl font-bold">Nexamine</span>
           </div>
           <p className="text-gray-400 mb-4">
-            © 2025 Nexamine. Powered by <img src="/lovable-uploads/56fb0ab2-83db-48b3-868f-db1ec0f7b422.png" alt="Nexensia AI Logo" className="inline h-6 align-middle" /> <span className="text-lg font-semibold">Nexensia AI</span> • Connect with Nexamine to reach your goals easier.
+            © 2025 Nexamine. Powered by <img src="/Nexamine-uploads/56fb0ab2-83db-48b3-868f-db1ec0f7b422.png" alt="Nexensia AI Logo" className="inline h-6 align-middle" /> <span className="text-lg font-semibold">Nexensia AI</span> • Connect with Nexamine to reach your goals easier.
           </p>
           <div className="flex items-center justify-center space-x-6 text-gray-400">
             <a 

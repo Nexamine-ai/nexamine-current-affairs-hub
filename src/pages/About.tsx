@@ -9,7 +9,7 @@ const About = () => {
       <section className="hero-banner bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" 
+            src="/Nexamine-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" 
             alt="Nexamine - Where Aspirants Evolve" 
             className="w-full h-full object-cover opacity-90"
           />
@@ -25,7 +25,7 @@ const About = () => {
           <div className="hero-footer-text">
             <p className="text-lg text-blue-200 flex items-center justify-center space-x-2">
               <span>Powered by</span>
-              <img src="/lovable-uploads/56fb0ab2-83db-48b3-868f-db1ec0f7b422.png" alt="Nexensia AI Logo" className="h-6 align-middle" />
+              <img src="/Nexamine-uploads/56fb0ab2-83db-48b3-868f-db1ec0f7b422.png" alt="Nexensia AI Logo" className="h-6 align-middle" />
               <span className="text-lg font-semibold">Nexensia AI</span>
               <span>• Connect with Nexamine to reach your goals easier</span>
             </p>

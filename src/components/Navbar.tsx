@@ -21,7 +21,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
+                src="/Nexamine-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
                 alt="Nexamine Logo" 
                 className="w-8 h-8"
               />

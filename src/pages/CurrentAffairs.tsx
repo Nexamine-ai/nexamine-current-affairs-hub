@@ -53,7 +53,7 @@ const CurrentAffairs = () => {
     <Layout>
       <section className="hero-banner bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/lovable-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" alt="Nexamine - Where Aspirants Evolve" className="w-full h-full object-cover opacity-90" />
+          <img src="/Nexamine-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" alt="Nexamine - Where Aspirants Evolve" className="w-full h-full object-cover opacity-90" />
           <div className="absolute inset-0 bg-black/45"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
