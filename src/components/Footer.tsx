@@ -19,7 +19,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center justify-center space-x-6 text-gray-400">
             <a 
-              href="https://youtube.com/yourchannel" 
+              href="https://www.youtube.com/@Nexamine-ai" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center space-x-1 hover:text-white transition-colors"
@@ -37,7 +37,7 @@ const Footer = () => {
               <span>LinkedIn</span>
             </a>
             <a 
-              href="https://nexamine.github.io" 
+              href="https://nexamine-ai.github.io/"
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
@@ -45,10 +45,10 @@ const Footer = () => {
               Website
             </a>
             <a 
-              href="mailto:contact@nexamine.ai"
+              href="mailto:ask.nexamine@gmail.com"
               className="hover:text-white transition-colors"
             >
-              contact@nexamine.ai
+              ask.nexamine@gmail.com
             </a>
           </div>
         </div>

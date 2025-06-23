@@ -39,10 +39,10 @@ const Contact = () => {
                   Get in touch with our support team for any questions or assistance.
                 </p>
                 <a 
-                  href="mailto:contact@nexamine.ai" 
+                  href="mailto:ask.nexamine@gmail.com" 
                   className="text-blue-600 hover:text-blue-800 font-semibold text-lg"
                 >
-                  contact@nexamine.ai
+                  ask.nexamine@gmail.com
                 </a>
               </div>
 
