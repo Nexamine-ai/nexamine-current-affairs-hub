@@ -1,17 +1,28 @@
-
 import Layout from '@/components/Layout';
 import { Target, Users, Award, Lightbulb } from 'lucide-react';
 
 const About = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Banner */}
+      <section className="hero-banner bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" 
+            alt="Nexamine - Where Aspirants Evolve" 
+            className="w-full h-full object-cover opacity-90"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">About Nexamine</h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed mb-8">
             Empowering UPSC aspirants with innovative technology and comprehensive resources
           </p>
+          <div className="hero-footer-text">
+            <p className="text-lg text-blue-200">
+              Powered by Nexensia AI • Connect with Nexamine to reach your goals easier
+            </p>
+          </div>
         </div>
       </section>
 

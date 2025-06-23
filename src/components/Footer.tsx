@@ -15,7 +15,7 @@ const Footer = () => {
             <span className="text-xl font-bold">Nexamine</span>
           </div>
           <p className="text-gray-400 mb-4">
-            © 2025 Nexamine. Connect with Nexamine to reach your goals easier.
+            © 2025 Nexamine. Powered by Nexensia AI • Connect with Nexamine to reach your goals easier.
           </p>
           <div className="flex items-center justify-center space-x-6 text-gray-400">
             <a 

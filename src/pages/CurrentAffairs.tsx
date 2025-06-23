@@ -1,207 +1,230 @@
 
 import Layout from '@/components/Layout';
-import { Calendar, Tag, BookOpen, ExternalLink, Filter, Search } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, Tag, BookOpen, ExternalLink, ArrowLeft, ChevronRight } from 'lucide-react';
 
 const CurrentAffairs = () => {
-  // Sample data - you can replace this with actual daily updates
+  const [currentView, setCurrentView] = useState('years'); // 'years', 'months', 'days', 'article'
+  const [selectedYear, setSelectedYear] = useState<string>('');
+  const [selectedMonth, setSelectedMonth] = useState<string>('');
+  const [selectedDay, setSelectedDay] = useState<string>('');
+
+  const years = ['2025', '2024'];
+  const months = ['June', 'May', 'April', 'March', 'February', 'January'];
+  const days = ['22', '21', '20', '19', '18'];
+
   const currentAffairsData = [
     {
-      id: 1,
-      title: "India's Digital Infrastructure Development",
-      source: "The Hindu",
-      date: "2025-06-22",
-      category: "Economy",
-      gsRelevance: ["GS3"],
-      tags: ["Digital India", "Technology", "Economic Development"],
-      summary: "Recent developments in India's digital infrastructure showing significant progress in connectivity and digital governance.",
-      nexamineInsight: "This topic is crucial for GS3 (Technology & Economic Development). Focus on government initiatives, impact on rural development, and challenges in implementation.",
-      readTime: "3 min read"
+      title: "UCC Debate in India",
+      gsRelevance: "GS2: Polity",
+      description: "Recent developments in the Uniform Civil Code discussion across states."
     },
     {
-      id: 2,
-      title: "Climate Change Adaptation Strategies",
-      source: "PIB",
-      date: "2025-06-22",
-      category: "Environment",
-      gsRelevance: ["GS3", "GS1"],
-      tags: ["Climate Change", "Environment", "Policy"],
-      summary: "Government announces new climate adaptation strategies with focus on vulnerable communities and sustainable development.",
-      nexamineInsight: "Relevant for both GS1 (Geography) and GS3 (Environment). Study the intersection of climate policy and socio-economic development.",
-      readTime: "4 min read"
+      title: "RBI's Monetary Review", 
+      gsRelevance: "GS3: Economy",
+      description: "Key policy changes and their implications for the Indian economy."
     },
     {
-      id: 3,
-      title: "Healthcare Reforms and Rural Access",
-      source: "Yojana",
-      date: "2025-06-22",
-      category: "Governance",
-      gsRelevance: ["GS2"],
-      tags: ["Healthcare", "Rural Development", "Governance"],
-      summary: "Analysis of recent healthcare reforms and their impact on improving medical access in rural areas.",
-      nexamineInsight: "Key topic for GS2 (Governance & Social Justice). Focus on policy implementation, challenges, and outcomes.",
-      readTime: "5 min read"
+      title: "Climate Action Report",
+      gsRelevance: "GS3: Environment", 
+      description: "India's progress on climate commitments and future roadmap."
     }
   ];
 
-  const categories = ["All", "Economy", "Environment", "Governance", "International", "Science & Tech"];
-  const sources = ["All", "The Hindu", "PIB", "Yojana", "Economic Times"];
+  const handleYearSelect = (year: string) => {
+    setSelectedYear(year);
+    setCurrentView('months');
+  };
+
+  const handleMonthSelect = (month: string) => {
+    setSelectedMonth(month);
+    setCurrentView('days');
+  };
+
+  const handleDaySelect = (day: string) => {
+    setSelectedDay(day);
+    setCurrentView('article');
+  };
+
+  const handleBack = () => {
+    if (currentView === 'months') {
+      setCurrentView('years');
+      setSelectedYear('');
+    } else if (currentView === 'days') {
+      setCurrentView('months');
+      setSelectedMonth('');
+    } else if (currentView === 'article') {
+      setCurrentView('days');
+      setSelectedDay('');
+    }
+  };
+
+  const getBreadcrumb = () => {
+    const parts = ['Current Affairs'];
+    if (selectedYear) parts.push(selectedYear);
+    if (selectedMonth) parts.push(selectedMonth);
+    if (selectedDay) parts.push(selectedDay);
+    return parts.join(' > ');
+  };
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Daily Current Affairs</h1>
-            <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-              Content curated from The Hindu, PIB, Yojana, tagged by GS paper and enhanced with editorial analysis
+      {/* Hero Banner */}
+      <section className="hero-banner bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" 
+            alt="Nexamine - Where Aspirants Evolve" 
+            className="w-full h-full object-cover opacity-90"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="hero-footer-text mt-8">
+            <p className="text-lg text-blue-200">
+              Powered by Nexensia AI • Connect with Nexamine to reach your goals easier
             </p>
           </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center space-x-6 text-blue-100">
-              <div className="flex items-center space-x-2">
-                <Calendar size={20} />
-                <span className="font-semibold">Today: June 22, 2025</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Tag size={20} />
-                <span>{currentAffairsData.length} Articles</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Filters Section */}
-      <section className="py-8 bg-white border-b">
+      {/* Navigation Section */}
+      <section className="bg-slate-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center space-x-2">
-              <Filter size={20} className="text-gray-500" />
-              <span className="font-medium text-gray-700">Filters:</span>
-            </div>
-            
-            <div className="flex items-center space-x-2">
-              <span className="text-sm font-medium text-gray-600">Category:</span>
-              <select className="border border-gray-300 rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                {categories.map(category => (
-                  <option key={category} value={category}>{category}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <span className="text-sm font-medium text-gray-600">Source:</span>
-              <select className="border border-gray-300 rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                {sources.map(source => (
-                  <option key={source} value={source}>{source}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex-1 max-w-md">
-              <div className="relative">
-                <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center space-x-4">
+              {currentView !== 'years' && (
+                <button
+                  onClick={handleBack}
+                  className="flex items-center space-x-2 text-blue-300 hover:text-white transition-colors"
+                >
+                  <ArrowLeft size={20} />
+                  <span>Back</span>
+                </button>
+              )}
+              <div className="text-gray-300">
+                {getBreadcrumb()}
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Articles Section */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
-            {currentAffairsData.map((article) => (
-              <article key={article.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h2 className="text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 cursor-pointer transition-colors">
-                        {article.title}
-                      </h2>
-                      <div className="flex items-center space-x-4 text-sm text-gray-600 mb-4">
-                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-md font-medium">
-                          {article.source}
-                        </span>
-                        <span>{article.date}</span>
-                        <span>{article.readTime}</span>
-                      </div>
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Left Sidebar Navigation */}
+            <div className="lg:col-span-1">
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-semibold mb-4">Current Affairs</h3>
+                <div className="space-y-2">
+                  {currentView === 'years' && (
+                    <div className="text-blue-300 font-medium">Select Year</div>
+                  )}
+                  {selectedYear && (
+                    <div className="text-white">{selectedYear}</div>
+                  )}
+                  {selectedMonth && (
+                    <div className="text-white">{selectedMonth}</div>
+                  )}
+                  {selectedDay && (
+                    <div className="text-blue-300 font-medium">{selectedDay}</div>
+                  )}
+                </div>
+              </div>
+            </div>
 
-                  <p className="text-gray-700 leading-relaxed mb-6">
-                    {article.summary}
-                  </p>
-
-                  {/* Nexamine Insight */}
-                  <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg mb-6 border-l-4 border-purple-500">
-                    <div className="flex items-start space-x-2">
-                      <img 
-                        src="/lovable-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
-                        alt="Nexamine" 
-                        className="w-6 h-6 flex-shrink-0 mt-0.5"
-                      />
-                      <div>
-                        <h4 className="font-semibold text-purple-900 mb-1">Nexamine Insight:</h4>
-                        <p className="text-purple-800 text-sm leading-relaxed">{article.nexamineInsight}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Tags and GS Relevance */}
-                  <div className="flex flex-wrap items-center gap-4">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm font-medium text-gray-600">GS Papers:</span>
-                      {article.gsRelevance.map((gs, index) => (
-                        <span key={index} className="bg-green-100 text-green-800 px-2 py-1 rounded-md text-xs font-medium">
-                          {gs}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm font-medium text-gray-600">Tags:</span>
-                      {article.tags.map((tag, index) => (
-                        <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded-md text-xs">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <button className="ml-auto flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm font-medium">
-                      <span>Read Full Article</span>
-                      <ExternalLink size={14} />
-                    </button>
+            {/* Main Content Area */}
+            <div className="lg:col-span-3">
+              {currentView === 'years' && (
+                <div>
+                  <h2 className="text-2xl font-bold mb-6">Select Year</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {years.map((year) => (
+                      <button
+                        key={year}
+                        onClick={() => handleYearSelect(year)}
+                        className="bg-slate-800 hover:bg-slate-700 p-6 rounded-lg text-center transition-colors"
+                      >
+                        <div className="text-2xl font-bold">{year}</div>
+                      </button>
+                    ))}
                   </div>
                 </div>
-              </article>
-            ))}
-          </div>
+              )}
 
-          {/* Load More */}
-          <div className="text-center mt-12">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200">
-              Load More Articles
-            </button>
-          </div>
-        </div>
-      </section>
+              {currentView === 'months' && (
+                <div>
+                  <h2 className="text-2xl font-bold mb-6">Select Month - {selectedYear}</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {months.map((month) => (
+                      <button
+                        key={month}
+                        onClick={() => handleMonthSelect(month)}
+                        className="bg-slate-800 hover:bg-slate-700 p-6 rounded-lg text-center transition-colors"
+                      >
+                        <div className="text-xl font-semibold">{month}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-      {/* Update Notice */}
-      <section className="bg-blue-50 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center space-x-2 text-blue-800">
-            <Calendar size={20} />
-            <p className="font-medium">
-              Current Affairs are updated daily at 8:00 AM IST with fresh content and analysis
-            </p>
+              {currentView === 'days' && (
+                <div>
+                  <h2 className="text-2xl font-bold mb-6">Select Date - {selectedMonth} {selectedYear}</h2>
+                  <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
+                    {days.map((day) => (
+                      <button
+                        key={day}
+                        onClick={() => handleDaySelect(day)}
+                        className="bg-slate-800 hover:bg-slate-700 p-4 rounded-lg text-center transition-colors"
+                      >
+                        <div className="text-xl font-bold">{day}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {currentView === 'article' && (
+                <div>
+                  <h1 className="text-3xl font-bold mb-4">
+                    Daily Current Affairs – {selectedMonth} {selectedDay}, {selectedYear}
+                  </h1>
+                  <p className="text-gray-300 mb-8">
+                    Curated from The Hindu, PIB, Yojana — tagged by GS paper and summarized with editorials and insights.
+                  </p>
+
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-6">Articles</h2>
+                    <div className="space-y-4">
+                      {currentAffairsData.map((article, index) => (
+                        <div key={index} className="bg-slate-800 p-6 rounded-lg">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
+                              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
+                                {article.gsRelevance}
+                              </span>
+                              <p className="text-gray-300 mt-3">{article.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-800 p-6 rounded-lg">
+                    <h3 className="text-2xl font-semibold mb-4">🎥 Watch Today's Video</h3>
+                    <a 
+                      href="https://youtube.com/watch?v=YOUR_VIDEO_ID" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 text-lg underline"
+                    >
+                      <span>Click here to watch on YouTube</span>
+                      <ExternalLink size={16} />
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>

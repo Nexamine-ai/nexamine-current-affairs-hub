@@ -6,36 +6,31 @@ import { ArrowRight, BookOpen, FileText, Search } from 'lucide-react';
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Banner */}
+      <section className="hero-banner bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" 
+            alt="Nexamine - Where Aspirants Evolve" 
+            className="w-full h-full object-cover opacity-90"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
-            <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
-              <img 
-                src="/lovable-uploads/e6663e7e-c4e9-40de-9eff-67fc319627c5.png" 
-                alt="Nexamine Logo" 
-                className="w-12 h-12"
-              />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Nexamine
-            </h1>
-            <p className="text-2xl md:text-3xl font-light text-blue-100 mb-8">
-              Where Aspirants Evolve
-            </p>
-            <p className="text-lg md:text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-              Transform your UPSC preparation with smart tools, curated content, 
-              and comprehensive mock exams. Connect with Nexamine to reach your goals easier.
-            </p>
+            <Link
+              to="/upsc"
+              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl border border-white/20"
+            >
+              <span>Start Your UPSC Journey</span>
+              <ArrowRight size={20} />
+            </Link>
           </div>
           
-          <Link
-            to="/upsc"
-            className="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-          >
-            <span>Start Your UPSC Journey</span>
-            <ArrowRight size={20} />
-          </Link>
+          <div className="hero-footer-text mt-8">
+            <p className="text-lg text-blue-200">
+              Powered by Nexensia AI • Connect with Nexamine to reach your goals easier
+            </p>
+          </div>
         </div>
       </section>
 

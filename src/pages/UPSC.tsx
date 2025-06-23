@@ -60,17 +60,29 @@ const UPSC = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Banner */}
+      <section className="hero-banner bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" 
+            alt="Nexamine - Where Aspirants Evolve" 
+            className="w-full h-full object-cover opacity-90"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">UPSC Resources</h1>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed mb-8">
-            Explore current affairs, GS notes, mock tests, and personalized tools powered by Nexamine
+            Explore current affairs, GS notes, mock tests, and personalized tools powered by Nexensia AI
           </p>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto mb-8">
             <p className="text-blue-100 leading-relaxed">
               Everything you need for comprehensive UPSC preparation, organized and enhanced 
               with smart insights to accelerate your learning journey.
+            </p>
+          </div>
+          <div className="hero-footer-text">
+            <p className="text-lg text-blue-200">
+              Powered by Nexensia AI • Connect with Nexamine to reach your goals easier
             </p>
           </div>
         </div>
