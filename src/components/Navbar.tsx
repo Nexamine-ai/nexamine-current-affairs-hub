@@ -25,7 +25,7 @@ const Navbar = () => {
                 alt="Nexamine Logo" 
                 className="w-8 h-8"
               />
-              <span className="text-2xl font-bold text-gray-900">Nexamine</span>
+              <span className="text-2xl font-bold text-gray-900">Nexamine AI</span>
             </Link>
           </div>
 

@@ -11,14 +11,14 @@ const Index = () => {
         <div className="absolute inset-0">
           <img 
             src="/lovable-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" 
-            alt="Nexamine - Where Aspirants Evolve" 
+            alt="Nexamine AI - Where Aspirants Evolve" 
             className="w-full h-full object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-black/45"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-            Nexamine – Where Aspirants Evolve
+            Nexamine AI – Where Aspirants Evolve
           </h1>
           
           <div className="backdrop-blur-md bg-white/10 rounded-xl p-8 max-w-3xl mx-auto mb-8 shadow-2xl border border-white/20">
