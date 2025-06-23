@@ -1,32 +1,37 @@
-name: Deploy to nexamine-ai.github.io
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build Vite project
+      - name: Build Vite App
         run: npm run build
 
-      - name: Deploy to GitHub Pages Repo
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          external_repository: Nexamine-ai/nexamine-ai.github.io
-          publish_branch: main
+      - name: Deploy to nexamine-ai.github.io
+        run: |
+          git config --global user.name "Nexamine Bot"
+          git config --global user.email "bot@nexamine.com"
+          git clone git@github.com:Nexamine-ai/nexamine-ai.github.io.git deploy-dir
+          rm -rf deploy-dir/*
+          cp -r dist/* deploy-dir/
+          cd deploy-dir
+          git add .
+          git commit -m "Deploy from current-affairs-hub"
+          git push
