@@ -1,40 +1,45 @@
-// src/pages/CurrentAffairs.tsx
 import Layout from '@/components/Layout';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 
 const years = ['2025', '2024'];
 const months = ['June', 'May', 'April', 'March', 'February', 'January'];
 const days = ['22', '21', '20', '19', '18'];
 
-const useCurrentAffairsContent = (year: string, month: string, day: string) => {
-  const [htmlContent, setHtmlContent] = useState<string>('');
-  const [videoLink, setVideoLink] = useState<string>('');
+const useMockTestContent = (year, month, day) => {
+  const [htmlContent, setHtmlContent] = useState(null);
+  const [summary, setSummary] = useState(null);
+  const [videoLink, setVideoLink] = useState(null);
 
   useEffect(() => {
-    const basePath = `/upsc/current-affairs/${year}/${month}/${day}`;
+    const folder = `/upsc/mock-tests/${year}/${month}/${day}`;
 
-    fetch(`${basePath}/index.html`)
+    fetch(`${folder}/index.html`)
       .then((res) => res.text())
       .then(setHtmlContent)
-      .catch(() => setHtmlContent('<p class="text-red-500">Content not available.</p>'));
+      .catch(() => setHtmlContent(null));
 
-    fetch(`${basePath}/video-link.txt`)
+    fetch(`${folder}/summary.txt`)
+      .then((res) => res.text())
+      .then(setSummary)
+      .catch(() => setSummary(null));
+
+    fetch(`${folder}/video-link.txt`)
       .then((res) => res.text())
       .then(setVideoLink)
-      .catch(() => setVideoLink(''));
+      .catch(() => setVideoLink(null));
   }, [year, month, day]);
 
-  return { htmlContent, videoLink };
+  return { htmlContent, summary, videoLink };
 };
 
-const CurrentAffairs = () => {
+const MockTests = () => {
   const [currentView, setCurrentView] = useState('years');
   const [selectedYear, setSelectedYear] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedDay, setSelectedDay] = useState('');
 
-  const { htmlContent, videoLink } = useCurrentAffairsContent(selectedYear, selectedMonth, selectedDay);
+  const { htmlContent, summary, videoLink } = useMockTestContent(selectedYear, selectedMonth, selectedDay);
 
   const handleBack = () => {
     if (currentView === 'months') {
@@ -52,14 +57,10 @@ const CurrentAffairs = () => {
   return (
     <Layout>
       <section className="hero-banner bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/lovable-uploads/3cd6c9b9-e4f4-419e-9d31-b8b22cdd63ed.png" alt="Nexamine - Where Aspirants Evolve" className="w-full h-full object-cover opacity-90" />
-          <div className="absolute inset-0 bg-black/45"></div>
-        </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">Current Affairs</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">Mock Tests</h1>
           <p className="text-xl text-blue-200 leading-relaxed">
-            Daily curated content from The Hindu, PIB, and Yojana with enhanced insights and editorial analysis tagged by GS papers.
+            Practice tests with detailed performance insights. Filter by year, month, and date to get started.
           </p>
         </div>
       </section>
@@ -68,13 +69,16 @@ const CurrentAffairs = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center space-x-4 mb-6">
             {currentView !== 'years' && (
-              <button onClick={handleBack} className="flex items-center text-blue-300 hover:text-white transition-colors">
+              <button
+                onClick={handleBack}
+                className="flex items-center text-blue-300 hover:text-white transition-colors"
+              >
                 <ArrowLeft size={20} />
                 <span className="ml-2">Back</span>
               </button>
             )}
             <div className="text-gray-300">
-              Current Affairs{selectedYear && ` > ${selectedYear}`}{selectedMonth && ` > ${selectedMonth}`}{selectedDay && ` > ${selectedDay}`}
+              Mock Tests{selectedYear && ` > ${selectedYear}`}{selectedMonth && ` > ${selectedMonth}`}{selectedDay && ` > ${selectedDay}`}
             </div>
           </div>
 
@@ -134,18 +138,30 @@ const CurrentAffairs = () => {
 
           {currentView === 'article' && (
             <div>
-              <h1 className="text-3xl font-bold mb-4">Daily Current Affairs – {selectedMonth} {selectedDay}, {selectedYear}</h1>
+              <h1 className="text-3xl font-bold mb-4">
+                Mock Test – {selectedMonth} {selectedDay}, {selectedYear}
+              </h1>
               <p className="text-gray-300 mb-8">
-                Curated from The Hindu, PIB, Yojana — tagged by GS paper and summarized with editorials and insights.
+                Review and analyze test material for UPSC prelims/mains for this date.
               </p>
 
               {htmlContent && (
-                <div className="prose prose-invert max-w-none bg-slate-800 p-6 rounded-lg" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                <div
+                  className="prose prose-invert max-w-none bg-slate-800 p-6 rounded-lg"
+                  dangerouslySetInnerHTML={{ __html: htmlContent }}
+                />
+              )}
+
+              {summary && (
+                <div className="bg-slate-800 p-6 rounded-lg mt-6">
+                  <h3 className="text-xl font-bold mb-2">📝 Summary</h3>
+                  <p className="text-white leading-relaxed">{summary}</p>
+                </div>
               )}
 
               {videoLink && (
                 <div className="bg-slate-800 p-6 rounded-lg mt-6">
-                  <h3 className="text-xl font-bold mb-3">🎥 Watch Summary</h3>
+                  <h3 className="text-xl font-bold mb-3">🎥 Watch Explanation</h3>
                   <a
                     href={videoLink}
                     target="_blank"
@@ -165,4 +181,4 @@ const CurrentAffairs = () => {
   );
 };
 
-export default CurrentAffairs;
+export default MockTests;

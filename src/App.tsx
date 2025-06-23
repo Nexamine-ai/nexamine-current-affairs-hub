@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import UPSC from "./pages/UPSC";
 import CurrentAffairs from "./pages/CurrentAffairs";
+import MockTests from '@/pages/MockTests';
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/upsc" element={<UPSC />} />
           <Route path="/current-affairs" element={<CurrentAffairs />} />
+          <Route path="/upsc/mock-tests" element={<MockTests />} /> // 👈 This must be present
           {/* Placeholder routes for future pages */}
           <Route path="/upsc/prelims" element={<NotFound />} />
           <Route path="/upsc/mains" element={<NotFound />} />

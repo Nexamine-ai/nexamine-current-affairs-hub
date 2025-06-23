@@ -1,4 +1,3 @@
-
 import Layout from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import { BookOpen, FileText, Newspaper, Users, Award, Clock } from 'lucide-react';
