@@ -68,21 +68,24 @@ const UPSC = () => {
             alt="Nexamine - Where Aspirants Evolve" 
             className="w-full h-full object-cover opacity-90"
           />
+          <div className="absolute inset-0 bg-black/45"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">UPSC Resources</h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed mb-8">
-            Explore current affairs, GS notes, mock tests, and personalized tools powered by Nexensia AI
-          </p>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">UPSC Resources</h1>
+          <div className="backdrop-blur-md bg-white/10 rounded-xl p-6 max-w-3xl mx-auto mb-8 shadow-2xl border border-white/20">
+            <p className="text-xl text-blue-200 leading-relaxed mb-4">
+              Explore current affairs, GS notes, mock tests, and personalized tools
+            </p>
             <p className="text-blue-100 leading-relaxed">
               Everything you need for comprehensive UPSC preparation, organized and enhanced 
               with smart insights to accelerate your learning journey.
             </p>
           </div>
           <div className="hero-footer-text">
-            <p className="text-lg text-blue-200">
-              Powered by Nexensia AI • Connect with Nexamine to reach your goals easier
+            <p className="text-lg text-blue-200 flex items-center justify-center space-x-2">
+              <span>Powered by</span>
+              <img src="/lovable-uploads/ea93eba9-8693-49b7-997d-823c12ac19f4.png" alt="Nexensia AI Logo" className="h-4 align-middle" />
+              <span>• Connect with Nexamine to reach your goals easier</span>
             </p>
           </div>
         </div>
@@ -153,9 +156,10 @@ const UPSC = () => {
                 </div>
               </div>
             </div>
-            <p className="text-lg text-gray-600">
-              Connect with Nexamine to reach your goals easier with personalized, 
-              time-optimized learning that adapts to your busy schedule.
+            <p className="text-lg text-gray-600 flex items-center justify-center space-x-2">
+              <span>Connect with Nexamine to reach your goals easier with personalized, 
+              time-optimized learning that adapts to your busy schedule. Powered by</span>
+              <img src="/lovable-uploads/ea93eba9-8693-49b7-997d-823c12ac19f4.png" alt="Nexensia AI Logo" className="h-4 align-middle" />
             </p>
           </div>
         </div>

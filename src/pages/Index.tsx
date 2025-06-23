@@ -14,12 +14,36 @@ const Index = () => {
             alt="Nexamine - Where Aspirants Evolve" 
             className="w-full h-full object-cover opacity-90"
           />
+          <div className="absolute inset-0 bg-black/45"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+            Nexamine – Where Aspirants Evolve
+          </h1>
+          
+          <div className="backdrop-blur-md bg-white/10 rounded-xl p-8 max-w-3xl mx-auto mb-8 shadow-2xl border border-white/20">
+            <p className="text-xl text-blue-100 leading-relaxed mb-6">
+              Your ultimate UPSC companion – organized, updated, and smartly curated to help you learn faster and aim higher.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-sm">
+              <div className="flex items-center justify-center space-x-2">
+                <span>📚</span>
+                <span>Curated GS Insights</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <span>🧠</span>
+                <span>Smarter Revision Tools</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <span>🎯</span>
+                <span>Topic-wise Practice</span>
+              </div>
+            </div>
+            
             <Link
               to="/upsc"
-              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl border border-white/20"
+              className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <span>Start Your UPSC Journey</span>
               <ArrowRight size={20} />
@@ -27,8 +51,10 @@ const Index = () => {
           </div>
           
           <div className="hero-footer-text mt-8">
-            <p className="text-lg text-blue-200">
-              Powered by Nexensia AI • Connect with Nexamine to reach your goals easier
+            <p className="text-lg text-blue-200 flex items-center justify-center space-x-2">
+              <span>Powered by</span>
+              <img src="/lovable-uploads/ea93eba9-8693-49b7-997d-823c12ac19f4.png" alt="Nexensia AI Logo" className="h-4 align-middle" />
+              <span>• Connect with Nexamine to reach your goals easier</span>
             </p>
           </div>
         </div>

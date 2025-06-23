@@ -77,11 +77,21 @@ const CurrentAffairs = () => {
             alt="Nexamine - Where Aspirants Evolve" 
             className="w-full h-full object-cover opacity-90"
           />
+          <div className="absolute inset-0 bg-black/45"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="hero-footer-text mt-8">
-            <p className="text-lg text-blue-200">
-              Powered by Nexensia AI • Connect with Nexamine to reach your goals easier
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">Current Affairs</h1>
+          <div className="backdrop-blur-md bg-white/10 rounded-xl p-6 max-w-3xl mx-auto mb-8 shadow-2xl border border-white/20">
+            <p className="text-xl text-blue-200 leading-relaxed">
+              Daily curated content from The Hindu, PIB, and Yojana with enhanced insights 
+              and editorial analysis tagged by GS papers.
+            </p>
+          </div>
+          <div className="hero-footer-text">
+            <p className="text-lg text-blue-200 flex items-center justify-center space-x-2">
+              <span>Powered by</span>
+              <img src="/lovable-uploads/ea93eba9-8693-49b7-997d-823c12ac19f4.png" alt="Nexensia AI Logo" className="h-4 align-middle" />
+              <span>• Connect with Nexamine to reach your goals easier</span>
             </p>
           </div>
         </div>
