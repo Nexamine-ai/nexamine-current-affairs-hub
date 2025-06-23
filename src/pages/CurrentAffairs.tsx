@@ -90,7 +90,8 @@ const CurrentAffairs = () => {
           <div className="hero-footer-text">
             <p className="text-lg text-blue-200 flex items-center justify-center space-x-2">
               <span>Powered by</span>
-              <img src="/lovable-uploads/ea93eba9-8693-49b7-997d-823c12ac19f4.png" alt="Nexensia AI Logo" className="h-4 align-middle" />
+              <img src="/lovable-uploads/56fb0ab2-83db-48b3-868f-db1ec0f7b422.png" alt="Nexensia AI Logo" className="h-6 align-middle" />
+              <span className="text-lg font-semibold">Nexensia AI</span>
               <span>• Connect with Nexamine to reach your goals easier</span>
             </p>
           </div>
